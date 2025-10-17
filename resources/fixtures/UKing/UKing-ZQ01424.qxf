@@ -4,7 +4,7 @@
  <Creator>
   <Name>Q Light Controller Plus</Name>
   <Version>4.14.2 GIT</Version>
-  <Author>Copilot</Author>
+  <Author>seppgraf</Author>
  </Creator>
  <Manufacturer>UKing</Manufacturer>
  <Model>ZQ01424 14x6W RGBW 4-in-1 PAR</Model>
@@ -17,8 +17,8 @@
  <Channel Name="Strobe" Preset="ShutterStrobeSlowFast"/>
  <Channel Name="Function Choice">
   <Group Byte="0">Effect</Group>
-  <Capability Min="0" Max="50">DMX 8CH Control</Capability>
-  <Capability Min="51" Max="100">Different Color Output</Capability>
+  <Capability Min="0" Max="50">Manual Control (Dimmer/RGBW/Strobe)</Capability>
+  <Capability Min="51" Max="100">Different Color Output (Macros)</Capability>
   <Capability Min="101" Max="150">Colors Jump Change</Capability>
   <Capability Min="151" Max="200">Colors Gradate</Capability>
   <Capability Min="201" Max="250">Colors Pulse Change</Capability>
@@ -46,9 +46,9 @@
  </Mode>
  <Physical>
   <Bulb Type="LED" Lumens="0" ColourTemperature="0"/>
-  <Dimensions Weight="2.5" Width="230" Height="230" Depth="120"/>
+  <Dimensions Weight="1.0" Width="180" Height="180" Depth="110"/>
   <Lens Name="Other" DegreesMin="25" DegreesMax="25"/>
   <Focus Type="Fixed" PanMax="0" TiltMax="0"/>
-  <Technical PowerConsumption="80" DmxConnector="3-pin"/>
+  <Technical PowerConsumption="100" DmxConnector="3-pin"/>
  </Physical>
 </FixtureDefinition>
