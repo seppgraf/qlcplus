@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE FixtureDefinition>
+<FixtureDefinition xmlns="http://www.qlcplus.org/FixtureDefinition">
+ <Creator>
+  <Name>Q Light Controller Plus</Name>
+  <Version>5.0.0 GIT</Version>
+  <Author>seppgraf</Author>
+ </Creator>
+ <Manufacturer>UKing</Manufacturer>
+ <Model>ZQ02356 7LEDs Focusing Wash Moving Head</Model>
+ <Type>Moving Head</Type>
+ <Channel Name="Pan" Preset="PositionPan"/>
+ <Channel Name="Pan Fine" Preset="PositionPanFine"/>
+ <Channel Name="Tilt" Preset="PositionTilt"/>
+ <Channel Name="Tilt Fine" Preset="PositionTiltFine"/>
+ <Channel Name="XY Speed" Preset="SpeedPanTiltFastSlow"/>
+ <Channel Name="Zoom" Preset="BeamZoomSmallBig"/>
+ <Channel Name="Rotating">
+  <Group Byte="0">Effect</Group>
+  <Capability Min="0" Max="127">Static angle (0–60°)</Capability>
+  <Capability Min="128" Max="191" Preset="RotationCounterClockwise">Counter-clockwise rotation (fast → slow)</Capability>
+  <Capability Min="192" Max="199">Stop</Capability>
+  <Capability Min="200" Max="255" Preset="RotationClockwise">Clockwise rotation (slow → fast)</Capability>
+ </Channel>
+ <Channel Name="Dimmer" Preset="IntensityMasterDimmer"/>
+ <Channel Name="Strobe">
+  <Group Byte="0">Shutter</Group>
+  <Capability Min="0" Max="3" Preset="ShutterOpen">On</Capability>
+  <Capability Min="4" Max="200" Preset="StrobeSlowToFast">Synchronous strobe (slow → fast)</Capability>
+  <Capability Min="201" Max="215">Random strobe (low speed)</Capability>
+  <Capability Min="216" Max="234">Random strobe (middle speed)</Capability>
+  <Capability Min="235" Max="255">Random strobe (high speed)</Capability>
+ </Channel>
+ <Channel Name="R dimmer" Preset="IntensityRed"/>
+ <Channel Name="G dimmer" Preset="IntensityGreen"/>
+ <Channel Name="B dimmer" Preset="IntensityBlue"/>
+ <Channel Name="W dimmer" Preset="IntensityWhite"/>
+ <Channel Name="CT">
+  <Group Byte="0">Colour</Group>
+  <Capability Min="0" Max="255">Linear CT control</Capability>
+ </Channel>
+ <Channel Name="Wash Macro">
+  <Group Byte="0">Effect</Group>
+  <Capability Min="0" Max="255">Inner color gradual change</Capability>
+ </Channel>
+ <Channel Name="Static Effect">
+  <Group Byte="0">Effect</Group>
+  <Capability Min="0" Max="255">Static effects selection (5 effects)</Capability>
+ </Channel>
+ <Channel Name="Dynamic Effect">
+  <Group Byte="0">Effect</Group>
+  <Capability Min="0" Max="255">Dynamic effects selection (5 effects)</Capability>
+ </Channel>
+ <Channel Name="Dynamic Effect Speed">
+  <Group Byte="0">Speed</Group>
+  <Capability Min="0" Max="127">Forward speed (fast → slow)</Capability>
+  <Capability Min="128" Max="255">Reverse speed (slow → fast)</Capability>
+ </Channel>
+ <Channel Name="Background R" Preset="IntensityRed"/>
+ <Channel Name="Background G" Preset="IntensityGreen"/>
+ <Channel Name="Background B" Preset="IntensityBlue"/>
+ <Channel Name="Background W" Preset="IntensityWhite"/>
+ <Channel Name="Reset">
+  <Group Byte="0">Maintenance</Group>
+  <Capability Min="0" Max="199">No function</Capability>
+  <Capability Min="200" Max="205" Preset="ResetAll">Reset (hold ~5s)</Capability>
+  <Capability Min="206" Max="255">No function</Capability>
+ </Channel>
+ <Mode Name="23 Channel">
+  <Channel Number="0">Pan</Channel>
+  <Channel Number="1">Pan Fine</Channel>
+  <Channel Number="2">Tilt</Channel>
+  <Channel Number="3">Tilt Fine</Channel>
+  <Channel Number="4">XY Speed</Channel>
+  <Channel Number="5">Zoom</Channel>
+  <Channel Number="6">Rotating</Channel>
+  <Channel Number="7">Dimmer</Channel>
+  <Channel Number="8">Strobe</Channel>
+  <Channel Number="9">R dimmer</Channel>
+  <Channel Number="10">G dimmer</Channel>
+  <Channel Number="11">B dimmer</Channel>
+  <Channel Number="12">W dimmer</Channel>
+  <Channel Number="13">CT</Channel>
+  <Channel Number="14">Wash Macro</Channel>
+  <Channel Number="15">Static Effect</Channel>
+  <Channel Number="16">Dynamic Effect</Channel>
+  <Channel Number="17">Dynamic Effect Speed</Channel>
+  <Channel Number="18">Background R</Channel>
+  <Channel Number="19">Background G</Channel>
+  <Channel Number="20">Background B</Channel>
+  <Channel Number="21">Background W</Channel>
+  <Channel Number="22">Reset</Channel>
+ </Mode>
+ <Physical>
+  <Bulb Type="LED" Lumens="0" ColourTemperature="0"/>
+  <Dimensions Weight="2" Width="200" Height="250" Depth="200"/>
+  <Lens Name="Other" DegreesMin="0" DegreesMax="0"/>
+  <Focus Type="Head" PanMax="540" TiltMax="205"/>
+  <Technical PowerConsumption="100" DmxConnector="3-pin"/>
+ </Physical>
+</FixtureDefinition>
