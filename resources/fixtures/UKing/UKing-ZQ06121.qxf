@@ -7,7 +7,7 @@
   <Author>seppgraf</Author>
  </Creator>
  <Manufacturer>UKing</Manufacturer>
- <Model>ZQ06121</Model>
+ <Model>ZQ06121 LED Bar (Pixels)</Model>
  <Type>LED Bar (Pixels)</Type>
  <Channel Name="Master dimmer" Preset="IntensityMasterDimmer"/>
  <Channel Name="Strobe (RGB/Total)" Preset="ShutterStrobeSlowFast"/>
