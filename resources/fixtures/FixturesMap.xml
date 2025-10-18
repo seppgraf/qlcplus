@@ -1769,6 +1769,8 @@
     <F n="Stairville-Pixel-Panel-144-RGB" m="Pixel Panel 144 RGB"/>
     <F n="Stairville-PS1500DMX" m="PS 1500 DMX"/>
     <F n="Stairville-Quad-Par-Profile-RGBW-5x8W" m="Quad Par Profile RGBW 5x8W"/>
+    <F n="Stairville-Remus-HexSpot-515" m="Remus HexSpot 515"/>
+    <F n="Stairville-Remus-QuadZoom-610" m="Remus QuadZoom 610"/>
     <F n="Stairville-SC-100" m="SC-100"/>
     <F n="Stairville-SC-X50-MKII" m="SC-X50 MKII"/>
     <F n="Stairville-SC250H" m="SC250H"/>
@@ -1883,6 +1885,7 @@
     <F n="Varytec-Easy-Move-LED-XS-Wash" m="Easy Move LED XS Wash"/>
     <F n="Varytec-Easy-Scan-XT-Mini" m="Easy Scan XT Mini"/>
     <F n="Varytec-Giga-Bar-HEX-3" m="Giga Bar HEX 3"/>
+    <F n="Varytec-Giga-Bar-LED-240-RGB-" m="Giga Bar LED 240 RGB "/>
     <F n="Varytec-Giga-Bar-Pix-8-RGB" m="Giga Bar Pix 8 RGB"/>
     <F n="Varytec-Giga-Bar-Pix-8-UV" m="Giga Bar Pix 8 UV"/>
     <F n="Varytec-Gigabar-II" m="Gigabar II"/>
