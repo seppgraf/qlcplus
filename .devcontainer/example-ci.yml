@@ -1,0 +1,125 @@
+# Example GitHub Actions workflow for cross-compiling QLC+ to aarch64
+# This is a REFERENCE example and is not active by default.
+# To use it, copy to .github/workflows/ and customize as needed.
+#
+# Note: This workflow assumes you have a way to provide Qt6 for aarch64.
+# See the README for options on how to obtain Qt6.
+
+name: Cross-compile QLC+ for aarch64 (Raspberry Pi 4)
+
+on:
+  workflow_dispatch:  # Manual trigger only
+  # Uncomment to enable on push:
+  # push:
+  #   branches:
+  #     - master
+  #     - develop
+
+jobs:
+  build-aarch64:
+    runs-on: ubuntu-22.04
+    name: QLC+ aarch64 Cross-Build
+    
+    env:
+      BUILD_TYPE: Release
+      QT_VERSION: "6.8.1"
+      
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: false
+          
+      - name: Set up environment variables
+        run: |
+          echo "BUILD_DATE=$(date -u '+%Y%m%d')" >> $GITHUB_ENV
+          echo "GIT_REV=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+          echo "APPVERSION=$(grep '^!qmlui' variables.pri | grep APPVERSION | sed 's/^.*= *//;s/ /_/g')" >> $GITHUB_ENV
+          
+      - name: Enable arm64 architecture
+        run: |
+          sudo dpkg --add-architecture arm64
+          sudo apt-get update
+          
+      - name: Install cross-compilation toolchain
+        run: |
+          sudo apt-get install -y \
+            gcc-aarch64-linux-gnu \
+            g++-aarch64-linux-gnu \
+            binutils-aarch64-linux-gnu \
+            cmake \
+            ninja-build \
+            ccache \
+            pkg-config \
+            python3-lxml
+            
+      - name: Install aarch64 dependencies
+        run: |
+          sudo apt-get install -y \
+            libasound2-dev:arm64 \
+            libusb-1.0-0-dev:arm64 \
+            libftdi1-dev:arm64 \
+            libudev-dev:arm64 \
+            libmad0-dev:arm64 \
+            libsndfile1-dev:arm64 \
+            liblo-dev:arm64 \
+            libfftw3-dev:arm64 \
+            libgl1-mesa-dev:arm64
+            
+      # NOTE: You need to provide Qt6 for aarch64 here.
+      # This is a placeholder. Options include:
+      # 1. Use a cached Qt6 build for aarch64
+      # 2. Download pre-built Qt6 from artifacts
+      # 3. Build Qt6 in a previous job (very slow)
+      # 4. Use a sysroot from Raspberry Pi OS
+      
+      - name: Setup Qt6 for aarch64 (PLACEHOLDER)
+        run: |
+          echo "⚠️ This step needs to be implemented based on your Qt6 setup"
+          echo "Options:"
+          echo "  1. Restore from cache: actions/cache@v3"
+          echo "  2. Download artifacts from another job"
+          echo "  3. Use sysroot from Raspberry Pi"
+          echo ""
+          echo "Example for cache:"
+          echo "  uses: actions/cache@v3"
+          echo "  with:"
+          echo "    path: /opt/qt6-aarch64"
+          echo "    key: qt6-aarch64-${QT_VERSION}"
+          echo ""
+          # For now, we'll just exit to show this is incomplete
+          echo "Skipping actual build since Qt6 setup is incomplete"
+          
+      # Uncomment when Qt6 is available:
+      # - name: Setup ccache
+      #   uses: hendrikmuhs/ccache-action@v1.2
+      #   with:
+      #     key: aarch64-cross-build
+      #     
+      # - name: Configure CMake
+      #   run: |
+      #     mkdir build-aarch64
+      #     cd build-aarch64
+      #     cmake .. \
+      #       -DCMAKE_TOOLCHAIN_FILE=../.devcontainer/aarch64-toolchain.cmake \
+      #       -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} \
+      #       -DCMAKE_PREFIX_PATH=/opt/qt6-aarch64/lib/cmake \
+      #       -DCMAKE_C_COMPILER_LAUNCHER=ccache \
+      #       -DCMAKE_CXX_COMPILER_LAUNCHER=ccache \
+      #       -G Ninja
+      #       
+      # - name: Build
+      #   run: |
+      #     cd build-aarch64
+      #     ninja -j$(nproc)
+      #     
+      # - name: Create tarball
+      #   run: |
+      #     cd build-aarch64
+      #     tar czf ../qlcplus-aarch64-${{ env.APPVERSION }}-${{ env.BUILD_DATE }}-${{ env.GIT_REV }}.tar.gz *
+      #     
+      # - name: Upload artifacts
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: qlcplus-aarch64-${{ env.APPVERSION }}
+      #     path: qlcplus-aarch64-*.tar.gz
