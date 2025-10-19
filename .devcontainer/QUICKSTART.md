@@ -17,6 +17,16 @@ This guide will help you get started with cross-compiling QLC+ for Raspberry Pi 
 
 The codespace will automatically build the development environment. This takes about 5-10 minutes on the first launch.
 
+### Verify Your Environment
+
+Once the codespace is ready, verify the setup:
+
+```bash
+./.devcontainer/test-environment.sh
+```
+
+This will check that all required tools and libraries are installed correctly.
+
 ## Step 2: Understand the Limitations
 
 ⚠️ **Important Note about Qt6**: Cross-compiling QLC+ requires Qt6 libraries compiled for aarch64. The devcontainer provides the cross-compilation toolchain and all dependencies except Qt6.

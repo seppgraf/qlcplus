@@ -14,6 +14,7 @@ This devcontainer provides a complete environment for cross-compiling QLC+ to aa
 - **[Quick Start Guide](QUICKSTART.md)** - Get started quickly with step-by-step instructions
 - **This README** - Detailed technical documentation and advanced options
 - **[Example CI Workflow](example-ci.yml)** - Reference GitHub Actions workflow
+- **[test-environment.sh](test-environment.sh)** - Verify your cross-compilation environment
 
 ## Quick Start
 
