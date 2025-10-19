@@ -1,0 +1,37 @@
+{
+	"name": "QLC+ aarch64 Cross-Compilation",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"context": ".."
+	},
+	
+	"features": {
+		"ghcr.io/devcontainers/features/git:1": {},
+		"ghcr.io/devcontainers/features/common-utils:2": {
+			"installZsh": true,
+			"installOhMyZsh": true,
+			"username": "vscode",
+			"upgradePackages": true
+		}
+	},
+
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-vscode.cpptools",
+				"ms-vscode.cmake-tools",
+				"twxs.cmake",
+				"ms-vscode.cpptools-extension-pack"
+			],
+			"settings": {
+				"cmake.configureOnOpen": false
+			}
+		}
+	},
+
+	"forwardPorts": [],
+	
+	"postCreateCommand": "echo 'aarch64 cross-compilation environment ready. Use ./cross-compile-aarch64.sh to build.'",
+	
+	"remoteUser": "vscode"
+}
