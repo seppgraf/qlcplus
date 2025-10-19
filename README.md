@@ -71,6 +71,10 @@ Click the badge below to see the currently confirmed issues with QLC+. Perhaps y
 
 Compilation guides and platform-specific instructions are available in our [GitHub Wiki](https://github.com/mcallegari/qlcplus/wiki).
 
+### Cross-Compilation for Raspberry Pi 4 (aarch64)
+
+QLC+ can be cross-compiled for ARM64/aarch64 architecture (Raspberry Pi 4) using GitHub Codespaces or VS Code Dev Containers. See [.devcontainer/README.md](.devcontainer/README.md) for detailed instructions on setting up and using the cross-compilation environment.
+
 #### Developers at work
 
 If you're regularly updating QLC+ sources with git pull, you may encounter compiler warnings, errors, or unresolved symbols. We strive to keep the `master` branch free of critical errors; however, dependencies between objects can sometimes cause issues, requiring a full package recompilation rather than just updating recent changes.

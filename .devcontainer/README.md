@@ -9,6 +9,12 @@ This devcontainer provides a complete environment for cross-compiling QLC+ to aa
 - **QLC+ dependencies**: All required libraries for cross-compilation
 - **VS Code integration**: Pre-configured with C/C++ and CMake extensions
 
+## Documentation
+
+- **[Quick Start Guide](QUICKSTART.md)** - Get started quickly with step-by-step instructions
+- **This README** - Detailed technical documentation and advanced options
+- **[Example CI Workflow](example-ci.yml)** - Reference GitHub Actions workflow
+
 ## Quick Start
 
 ### Using GitHub Codespaces
